@@ -1,0 +1,7 @@
+const a = require('./mynpmpackage/index')
+console.log(a)
+const dtstr = a.dateFrame(new Date())
+console.log(dtstr)
+const htmlstr = a.htmlEscape('<h1>我是彭小宝</h1>')
+console.log(htmlstr)
+console.log(a.htmlunEscape(htmlstr))
