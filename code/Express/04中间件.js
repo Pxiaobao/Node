@@ -22,6 +22,12 @@ const mv3 = function(req,res,next){
     //获取请求到达服务器的时间
     next()
 }
+//在服务器端 可以用req.body这个属性来接收客户端发过来的请求体数据
+//配置express.json中间件，用于解析表单中的JSON格式数据
+//如果不配置解析表单的中间件，则在路由中req.body默认是undefined
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
 //将mv注册为全局生效的中间件
 app.use(mv)
 app.use(mv2)

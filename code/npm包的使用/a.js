@@ -1,5 +1,6 @@
 const TIME = require('./dataFrame')
 const moment = require('moment')
+console.log(TIME)
 const date = new Date()
 console.log(date)
 console.log(TIME.dateFrame(date))
