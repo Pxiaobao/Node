@@ -35,6 +35,14 @@ app.use(expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] 
 // 导入并注册用户路由模块
 const userRouter = require('./router/user')
 app.use('/api', userRouter)
+// 导入并使用文章分类路由模块
+const artCateRouter = require('./router/artcate')
+// 为文章分类的路由挂载统一的访问前缀 /my/article
+app.use('/my/article', artCateRouter)
+// 导入并使用文章路由模块
+const articleRouter = require('./router/article')
+// 为文章的路由挂载统一的访问前缀 /my/article
+app.use('/my/article', articleRouter)
 
 // 导入并使用用户信息路由模块
 const userinfoRouter = require('./router/userinfo')
